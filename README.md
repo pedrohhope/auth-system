@@ -1,73 +1,64 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+## API de Autenticação usando JWT Tokens - Documentação
+Bem-vindo à documentação da API de autenticação desenvolvida com NestJS e baseada em JWT Tokens. Esta API oferece funcionalidades básicas de autenticação, incluindo login, cadastro de usuário e visualização de perfil. Utiliza cookies para armazenar o token JWT, proporcionando uma forma segura de autenticação e autorização.
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Visão Geral
+A API é construída utilizando o framework NestJS, que é uma estrutura Node.js para construção de aplicativos eficientes, escaláveis e confiáveis. A autenticação é realizada por meio de JSON Web Tokens (JWT), o que oferece uma maneira segura e eficiente de verificar a identidade dos usuários.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Aqui está uma visão geral das principais funcionalidades oferecidas pela API:
 
-## Description
+Login: Rota para autenticar usuários e gerar um token JWT.
+Cadastro de Usuário: Rota para registrar novos usuários no sistema.
+Visualização de Perfil: Rota para recuperar informações do perfil do usuário autenticado.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
-```bash
-$ yarn install
+## Endpoints
+```
+1. Login
+URL: /auth/login
+Método: POST
+Parâmetros do Corpo:
+email: E-mail do usuário (String)
+password: Senha do usuário (String)
+Resposta de Sucesso:
+Status: 200 OK
+Resposta de Erro:
+Status: 401 Unauthorized
+Corpo: Mensagem de erro
+```
+```
+2. Cadastro de Usuário
+URL: /auth/register
+Método: POST
+Parâmetros do Corpo:
+name: Nome do usuário (String)
+email: E-mail do usuário (String)
+password: Senha do usuário (String)
+Resposta de Sucesso:
+Status: 201 Created
+Corpo: Usuário registrado com sucesso
+Resposta de Erro:
+Status: 400 Bad Request
+Corpo: Mensagem de erro
+```
+```
+3. Visualização de Perfil
+URL: /auth/profile
+Método: GET
+Cabeçalhos:
+Authorization: Token JWT
+Resposta de Sucesso:
+Status: 200 OK
+Corpo: Informações do perfil do usuário
+Resposta de Erro:
+Status: 401 Unauthorized
+Corpo: Mensagem de erro
 ```
 
-## Running the app
+## Estratégia de Cookies
+A API utiliza cookies para armazenar o token JWT. Isso proporciona uma camada adicional de segurança, pois o token não é exposto no corpo das solicitações HTTP. Se desejar mudar a estratégia de onde o cookie é salvo, você é livre para implementar sua própria lógica de manipulação de cookies.
 
-```bash
-# development
-$ yarn run start
+## Conclusão
+Esta documentação fornece uma visão geral da API de autenticação desenvolvida com NestJS e JWT Tokens. Se você tiver alguma dúvida ou precisar de mais informações, não hesite em entrar em contato com a equipe de desenvolvimento. Esperamos que esta API atenda às suas necessidades de autenticação de forma segura e eficiente.
 
-# watch mode
-$ yarn run start:dev
 
-# production mode
-$ yarn run start:prod
-```
 
-## Test
 
-```bash
-# unit tests
-$ yarn run test
-
-# e2e tests
-$ yarn run test:e2e
-
-# test coverage
-$ yarn run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
