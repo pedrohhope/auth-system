@@ -57,7 +57,7 @@ Corpo: Mensagem de erro
 A API utiliza cookies para armazenar o token JWT. Isso proporciona uma camada adicional de segurança, pois o token não é exposto no corpo das solicitações HTTP. Se desejar mudar a estratégia de onde o cookie é salvo, você é livre para implementar sua própria lógica de manipulação de cookies.
 
 ## Conclusão
-Esta documentação fornece uma visão geral da API de autenticação desenvolvida com NestJS e JWT Tokens. Se você tiver alguma dúvida ou precisar de mais informações, não hesite em entrar em contato com a equipe de desenvolvimento. Esperamos que esta API atenda às suas necessidades de autenticação de forma segura e eficiente.
+Esta documentação fornece uma visão geral da API de autenticação desenvolvida com NestJS e JWT Tokens.
 
 
 
