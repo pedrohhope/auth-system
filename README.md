@@ -2,7 +2,7 @@
 Bem-vindo à documentação da API de autenticação desenvolvida com NestJS e baseada em JWT Tokens. Esta API oferece funcionalidades básicas de autenticação, incluindo login, cadastro de usuário e visualização de perfil. Utiliza cookies para armazenar o token JWT, proporcionando uma forma segura de autenticação e autorização.
 
 ## Visão Geral
-A API é construída utilizando o framework NestJS, que é uma estrutura Node.js para construção de aplicativos eficientes, escaláveis e confiáveis. A autenticação é realizada por meio de JSON Web Tokens (JWT), o que oferece uma maneira segura e eficiente de verificar a identidade dos usuários.
+A API é construída utilizando o framework NestJS, que é uma estrutura Node.js para construção de aplicativos eficientes, escaláveis e confiáveis e TypeORM para aumentar a velocidade de desenvolvimento do seu app. A autenticação é realizada por meio de JSON Web Tokens (JWT), o que oferece uma maneira segura e eficiente de verificar a identidade dos usuários.
 
 ## Aqui está uma visão geral das principais funcionalidades oferecidas pela API:
 
