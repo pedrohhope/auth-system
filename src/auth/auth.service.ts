@@ -21,7 +21,11 @@ export class AuthService {
   findUserToLoginByEmail(email: string) {
     return this.userRepository.findOne({
       where: { email },
-      select: ['id', 'password'],
+      select: ['id', 'name', 'password'],
     });
+  }
+
+  findUserById(id: string) {
+    return this.userRepository.findOne({ where: { id } });
   }
 }
